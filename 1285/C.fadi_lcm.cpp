@@ -49,3 +49,4 @@ int main() {
    cout << a << " " << b << "\n";  
   return 0;
 }
+// https://prnt.sc/ysOsNRchN-TF 
