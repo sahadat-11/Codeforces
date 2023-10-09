@@ -15,7 +15,7 @@ int main() {
   }
   //cout << ind1 << " " << ind2 << endl;
   int dif = ((ind2 - ind1) + 7) % 7;
-  cout << dif;
+  //cout << dif;
   bool flag = false;
   if((dif == 0) or (dif == 2) or (dif == 3)) flag = true;
   if(flag) cout << "YES\n";

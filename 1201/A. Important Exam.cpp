@@ -29,3 +29,37 @@ int main() {
    cout << sum << "\n";
    return 0;
 }
+
+// approach 2:
+
+//In The Name of ALLAH
+
+#include <bits/stdc++.h>
+using namespace std;
+#define sahadat() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define ll long long
+int main()
+{
+   sahadat();
+   
+   int n,m;cin>>n>>m;
+   string s[n];ll a[m];
+   for(ll i=0;i<n;i++) cin>>s[i];
+   for(ll i=0;i<m;i++)cin>>a[i];
+  
+   ll ans=0;
+   for(int i=0;i<m;i++){
+    map<char,int>mp;
+    int  mx=0;
+   for(int j=0;j<n;j++){
+        mp[s[j][i]]++;
+
+        mx=max(mx,mp[s[j][i]]);
+   }
+    ans+=mx*a[i];
+  }
+  cout<<ans<<endl;
+ 
+   
+	return 0;
+}

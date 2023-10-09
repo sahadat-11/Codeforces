@@ -10,7 +10,7 @@ int main() {
    sort(a, a + n);
    if(k == 0) {
    	 if(a[0] > 1) cout << "1\n";
-   	 else cout << "-1\n";
+   	 else cout << "-1\n"; // if(a[0] == 1)
    }
    else if(n == k) {
    	 cout << a[n - 1];
