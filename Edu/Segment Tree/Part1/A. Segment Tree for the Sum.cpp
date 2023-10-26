@@ -1,4 +1,4 @@
-//In The Name of AintAH
+//In The Name of AllAH
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
