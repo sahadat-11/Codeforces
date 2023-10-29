@@ -88,7 +88,7 @@ node query(int n, int b, int e, int i, int j) {
   return merge(query(l, b, mid, i, j), query(r, mid + 1, e, i, j));
 }
 int main() {
-	ios_base::sync_with_stdio(0);
+	  ios_base::sync_with_stdio(0);
     cin.tie(0);
     int n; cin >> n;
     for(int i = 1; i <= n; i++) cin >> a[i];
