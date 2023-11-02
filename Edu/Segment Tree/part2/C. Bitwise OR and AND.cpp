@@ -100,6 +100,7 @@ int main() {
 
 // https://cplusplus.com/reference/algorithm/fill/
 // Complexity: O(nlogn * 30) M = (N * 30)
+//https://prnt.sc/lBsf5HcHrTtp
 
 //In The Name of AintAH
 #include <bits/stdc++.h>
@@ -210,7 +211,7 @@ int main() {
 
 // https://cplusplus.com/reference/algorithm/fill/
 // Complexity: O(nlogn * 30) M = (N) 
-
+//https://prnt.sc/qt6KnlTNYzic
 
 //In The Name of AintAH
 #include <bits/stdc++.h>
@@ -321,3 +322,4 @@ int main() {
 }
 // https://cplusplus.com/reference/algorithm/fill/
 // Complexity: O(nlogn) M = (N)
+//https://prnt.sc/mrZGtMM-ccO2

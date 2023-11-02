@@ -70,3 +70,8 @@ int main() {
     }
     return 0;  
 }
+
+//https://prnt.sc/liwI-cnZ_FWF
+//https://prnt.sc/4rDot49cv0Z9
+//https://prnt.sc/BBxeuHHaZMNl
+//https://prnt.sc/0CZo77ny9Iwo
