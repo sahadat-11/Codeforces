@@ -1,25 +1,33 @@
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
-   ios_base::sync_with_stdio(0);
-   cin.tie(0);
-   int t; cin >> t;
-   while(t--) {
-   	 int n, k; cin >> n >> k; int a[n + 1];
-       vector<pair<int, int>> v;
-       for(int i = 1; i <= n; i++) {
-         cin >> a[i];
-         a[i] = a[i] % k;
-         if(a[i] == 0) a[i] = k;
-         v.push_back({-a[i], i});
-       }
-       sort(v.begin(), v.end());
-       for(auto u : v) {
-         cout << u.second << " ";
-       }
-       cout << "\n";
+const int mod = 1e9 + 7;
+#define int long long
+void solve() {
+   int n, k; cin >> n >> k;
+   vector<int> v(n);
+   for(int i = 0; i < n; i++) {
+     cin >> v[i];
+     v[i] %= k;
+     if(v[i] == 0) v[i] = k;
    }
-   return 0;
+   vector<pair<int, int>> vv;
+   for(int i = 0; i < n; i++) {
+    vv.push_back({-v[i], i + 1}); 
+   }
+   sort(vv.begin(), vv.end());
+   for(int i = 0; i < n; i++) {
+    cout << vv[i].second << " "; 
+   }
+   cout << "\n";
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int t = 1; 
+  cin >> t;
+  while(t--) {
+    solve();
+  }
+  return 0;
 }

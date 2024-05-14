@@ -3,7 +3,7 @@
 #include<ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 using namespace std;
-#define ll long long
+#define int long long
 const int N = 1e6 + 7;
 int l[N], r[N];
 template <typename T> using o_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -28,7 +28,7 @@ int main() {
   }
   //for(int i = 0; i < n; i++) cout << p[i] << " ";
   o_set<int> st;
-  ll ans = 0;
+  int ans = 0;
   for(int i = n - 1; i >= 0; i--) {
     ans += st.order_of_key(p[i]);
     st.insert(p[i]);
@@ -36,4 +36,4 @@ int main() {
   cout << ans << "\n";
   return 0;
 }
-//https://prnt.sc/lO_Q2-3Hnjft
+// https://prnt.sc/lO_Q2-3Hnjft

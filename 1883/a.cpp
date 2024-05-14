@@ -1,24 +1,26 @@
-//In The Name of AllAH
-#include <bits/stdc++.h>
+//In The Name of ALLAH
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
-	ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    int t; cin >> t;
-    while(t--) {
-      string s; cin >> s;
-      int sum = 0;
-      if(s[0] == '0') sum += 9;
-      else sum += (s[0] - '1');
-      for(int i = 1; i < s.size(); i++) {
-      	if(s[i] == '0' and s[i - 1] == '0') sum += 0;
-      	else if(s[i] == '0' or s[i - 1] == '0') sum += (10 - abs(s[i] - s[i - 1]));
-      	else {
-      		sum += (abs(s[i] - s[i - 1]));
-      	}
-      }
-      cout << sum + 4 << endl;
-    } 
-    return 0;  
+const int mod = 1e9 + 7;
+#define int long long
+void solve() {
+   int n, k; string s; cin >> n >> k >> s;
+   int odd = 0;
+   map<char, int> mp;
+   for(auto u : s) mp[u]++;
+   for(auto u : mp) {
+   	if(u.second % 2) odd++;
+   }
+   if(odd - k <= 1) cout << "YES\n";
+   else cout << "NO\n";
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int t = 1; 
+  cin >> t;
+  while(t--) {
+    solve();
+  }
+  return 0;
 }

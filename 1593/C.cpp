@@ -1,40 +1,31 @@
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
-   ios_base::sync_with_stdio(0);
-   cin.tie(0);
-   int t; cin >> t;
-   while(t--) {
-      int a, b, c; cin >> a >> b >> c;
-      int mx = max(a, max(b, c));
-      int cnt = 0;
-      if(a == mx) cnt++;
-      if(b == mx) cnt++;
-      if(c == mx) cnt++;
-      if(a == mx and mx != 0) {
-         if(cnt == 1) cout << 0 << " ";
-         else cout << 1 << " ";
-      }
-      else {
-         cout << mx + 1 - a << " ";
-      }
-      if(b == mx and mx != 0) {
-         if(cnt == 1) cout << 0 << " ";
-         else cout << 1 << " ";
-      }
-      else {
-         cout << mx + 1 - b << " ";
-      }
-      if(c == mx and mx != 0) {
-        if(cnt == 1) cout << 0 << " ";
-        else cout << 1 << " ";
-      }
-      else {
-         cout << mx + 1 - c << " ";
-      }
-      cout << "\n";
-   } 
-   return 0;
+const int mod = 1e9 + 7;
+#define int long long
+void solve() {
+   int x, n; cin >> x >> n;
+   vector<int> v(n), dif(n);
+   for(int i = 0; i < n; i++) {
+     cin >> v[i];
+     dif[i] = x - v[i];
+   }
+   sort(dif.begin(), dif.end());
+   //for(auto u : dif) cout << u << " "; cout << "\n";
+   int cnt = 0;
+   for(int i = 0; i < n; i++) {
+      if(x > dif[i]) cnt++, x -= dif[i];
+      else break;
+   }
+   cout << cnt << "\n";
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int t = 1; 
+  cin >> t;
+  while(t--) {
+    solve();
+  }
+  return 0;
 }

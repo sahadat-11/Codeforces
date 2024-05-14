@@ -55,3 +55,6 @@ int main() {
   }
   return 0;
 }
+
+// https://prnt.sc/1QUSVddZevRB
+// https://prnt.sc/iVQ5vlBIw-WC

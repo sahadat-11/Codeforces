@@ -32,3 +32,26 @@ int main() {
   }
   return 0;
 }
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int t;cin>>t;
+  while(t--){
+    string s;cin>>s;
+    int len=s.length(),num0=0,num1=0;
+    for(int i=0;i<len;i++){
+      if(s[i]=='0') num0++;
+      else num1++;
+    }
+    int num=0;
+    for(int i=0;i<len;i++){
+      if(s[i]=='0') num1--;
+      else num0--;
+      if(num0<0||num1<0) break;
+      num++;
+    }
+    cout<<len-num<<endl;
+  }
+  return 0;
+}

@@ -14,11 +14,8 @@ void solve() {
      	mp[i] = i - 1;
      	pre = i - 1;
      }
-     else if(v[i] == v[i - 1]) {
-     	mp[i] = pre;
-     }
      else {
-     	mp[i] = -1;
+     	mp[i] = pre;
      }
    }
    // for(auto [x, y] : mp) {

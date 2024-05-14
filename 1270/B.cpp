@@ -26,3 +26,5 @@ int main() {
   }
   return 0;
 }
+
+// https://prnt.sc/zAEgvcY3CVVY

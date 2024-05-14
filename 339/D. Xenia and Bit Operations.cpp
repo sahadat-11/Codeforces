@@ -66,7 +66,7 @@ int merge(int left, int right, int segment_l, int segment_r) {
    	 // pow++;
    	 // segment_len /= 2;
    // }
-   int pow = __lg(segment_len);
+   int pow = __lg(segment_len);m // O(1)
    if(pow % 2 == 1) {
    	 return left | right;
    }

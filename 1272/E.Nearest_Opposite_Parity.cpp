@@ -1,9 +1,9 @@
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int N = 2e5 + 7, inf = 1e9;
-vector<int> adj[N];
+vector<int> g[N];
 int ans[N], n;
 void solve(vector<int> & even, vector<int> & odd) {
    queue<int> q;
@@ -15,7 +15,7 @@ void solve(vector<int> & even, vector<int> & odd) {
    while(!q.empty()) {
      int u = q.front();
      q.pop();
-     for(auto v : adj[u]) {
+     for(auto v : g[u]) {
        if(d[u] + 1 < d[v]) {
          d[v] = d[u] + 1;
          q.push(v);
@@ -26,7 +26,7 @@ void solve(vector<int> & even, vector<int> & odd) {
      ans[u] = d[u];
    }
 }
-int main() {
+int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cin >> n; int a[n + 1];
@@ -38,13 +38,13 @@ int main() {
   }
   for(int i = 1; i <= n; i++) {
     int j = i - a[i];
-    if(j >= 1) adj[j].push_back(i);
+    if(j >= 1) g[j].push_back(i);
     j = i + a[i];
-    if(j <= n) adj[j].push_back(i);
+    if(j <= n) g[j].push_back(i);
   }
   // for(int i = 1; i <= n; i++) {
   //   cout << i << ": ";
-  //   for(auto u : adj[i]) cout << u << " ";
+  //   for(auto u : g[i]) cout << u << " ";
   //   cout << " \n";
   // }
   solve(even, odd);
@@ -55,4 +55,3 @@ int main() {
   }
   return 0;
 } 
-
