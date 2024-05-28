@@ -14,7 +14,5 @@ int main() {
    	 if(x >= mnsum and x <= mxsum) cout << "YES\n";
    	 else cout << "NO\n";
    }
-  
-   
    return 0;
 }
