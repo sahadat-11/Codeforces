@@ -31,32 +31,45 @@ int main() {
   }
   return 0;
 }
-// approach 2:
-#include <bits/stdc++.h>
+
+
+//In The Name of ALLAH
+#include<bits/stdc++.h>
 using namespace std;
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int nW, boxW;
-        cin >> nW >> boxW;
-        vector<int> v(nW, 0);
-        for (int i = 0; i < nW; i++) cin >> v[i];
-        sort(v.begin(), v.end());
-        int sp = boxW, count = 1;
-        while (!v.empty()) {
-            auto iter = upper_bound(v.begin(), v.end(), sp);
-            //cout << *iter << endl;
-            if (iter != v.begin()) {
-                iter--;
-                sp -= *iter;
-                v.erase(iter);
-            } else {
-                sp = boxW;
-                count++;
-            }
+const int mod = 1e9 + 7;
+#define int long long
+void solve() {
+   int n, w; cin >> n >> w;
+   vector<int> cnt(32, 0);
+   for(int i = 0; i < n; i++) {
+    int x; cin >> x;
+    cnt[log2(x)]++;
+   }
+   int ans = 0;
+   while(n) {
+      int cur = w;
+      for(int i = 30; i >= 0; i--) {
+      while(cnt[i]) {
+        if(cur >= (1 << i)) {
+          cur -= (1 << i);
+          n--;
+          cnt[i]--;
         }
-        cout << count << endl;
+        else break;
+      }
     }
-    return 0;
+    ans++;
+   }
+   cout << ans << "\n";
+
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int t = 1; 
+  cin >> t;
+  while(t--) {
+    solve();
+  }
+  return 0;
 }

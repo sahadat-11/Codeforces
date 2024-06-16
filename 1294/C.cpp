@@ -16,7 +16,6 @@ void solve() {
    }
    int sz = (int)divs.size();
    sort(divs.begin(), divs.end());
-   if((int)divs.size() > 4) {
    	for(int i = 1; i < sz; i++) {
    	  for(int j = i + 1; j < sz; j++) {
         int x = divs[i], y = divs[j];
@@ -29,8 +28,6 @@ void solve() {
    	  }
    	}
    	cout << "NO\n";
-   }
-   else cout << "NO\n";
 }
 int32_t main() {
   ios_base::sync_with_stdio(0);

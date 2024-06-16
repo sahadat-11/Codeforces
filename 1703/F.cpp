@@ -67,3 +67,29 @@ int32_t main() {
   }
   return 0;
 }
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int n, x, t;
+
+void solve(){
+	cin>>n;
+	
+	vector<int> v;
+	ll ans=0;
+	for(ll i=0; i<n; i++){
+		cin>>x;
+		if(x>=i+1) continue;
+		ans+=(ll)(lower_bound(v.begin(), v.end(), x)-v.begin());
+		v.push_back(i+1);
+	}
+	cout<<ans<<endl;
+
+}
+
+signed main(){
+	cin>>t;
+	while(t--) solve();
+}
