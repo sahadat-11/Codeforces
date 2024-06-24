@@ -26,24 +26,30 @@ int main() {
 }
 
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <algorithm>
+//In The Name of ALLAH
+#include<bits/stdc++.h>
 using namespace std;
-int main() {
-  int t;
-  string s;
+const int mod = 1e9 + 7;
+#define int long long
+void solve() {
+   string s; cin >> s;
+   int n = s.size();
+   s = '1' + s;
+   int sum = 0;
+   for(int i = 1; i <= n; i++) {
+      if(s[i] == '0' and s[i - 1] == '1') sum++;
+   }
+   cout << min(2ll, sum) << "\n";
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int t = 1; 
   cin >> t;
-  while (t--) {
-    cin >> s;
-    s = '1' + s;
-    long long cnt = 0;
-    for(int i = 1; i < s.length(); ++i){
-      if(s[i] == '0' && s[i - 1] == '1') cnt++;
-    }
-    if(cnt > 2) cout << 2 << endl;
-    else cout << cnt << endl;
+  while(t--) {
+    solve();
   }
   return 0;
 }
+
+

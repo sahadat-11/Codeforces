@@ -44,26 +44,29 @@ int main() {
 }
 
 
+//In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 105;
-int c[N],r[N];
-string s[N];
-int main(){
-    int n;
-    cin >> n;
-    for(int i = 0; i < n; i++){
-        cin >> s[i];
+const int mod = 1e9 + 7;
+#define int long long
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int n; cin >> n; string s[n];
+  for(int i = 0; i < n; i++) {
+    cin >> s[i];
+  }
+  int sum = 0;
+  for(int i = 0; i < n; i++) {
+    int cnt1 = 0, cnt2 = 0;
+    for(int j = 0; j < n; j++) {
+      if(s[i][j] == 'C') cnt1++;
+      if(s[j][i] == 'C') cnt2++;
     }
-    int ans = 0;
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(s[i][j] == 'C') r[i]++,c[j]++;
-        }
-    }
-    for(int i = 0; i < n; i++){
-        ans+=(c[i]-1)*c[i]/2;
-        ans+=(r[i]-1)*r[i]/2;
-    }
-    cout << ans << '\n';
+    sum += (cnt1 * (cnt1 - 1) / 2);
+    sum += (cnt2 * (cnt2 - 1) / 2);
+    //cout << cnt1 << " " << cnt2 << "\n";
+  }
+  cout << sum << "\n";
+  return 0;
 }

@@ -21,8 +21,8 @@ int main() {
   }
   return 0;
 }
-//https://prnt.sc/qFFHnE4ZgdU-
-// o(n)
+// https://prnt.sc/qFFHnE4ZgdU-
+// O(n)
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -44,5 +44,5 @@ int main() {
   }
   return 0;
 }
-// o(1)
+// O(1)
 // https://prnt.sc/2OV2Pz2pCbMH

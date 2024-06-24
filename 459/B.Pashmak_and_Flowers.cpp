@@ -28,4 +28,35 @@ int main() {
   }
   return 0;
 }
-// https://prnt.sc/PKeU8hKI3Wuh
+
+
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+const int mod = 1e9 + 7;
+#define int long long
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int n; cin >> n;
+  vector<int> a(n);
+  map<int, int> mp;
+  int mx = 0, mn = INT_MAX;
+  for(int i = 0; i < n; i++) {
+    cin >> a[i];
+    mp[a[i]]++;
+    mx = max(mx, a[i]);
+    mn = min(mn, a[i]);
+  }
+  //cout << mx - mn << " " << mp[mx] * mp[mn] << "\n";
+  int dif = mx - mn;
+  int ans;
+  if(mx == mn) {
+    ans = mp[mx] * (mp[mx] - 1) / 2;
+  }
+  else ans = mp[mx] * mp[mn];
+  cout << dif << " " << ans << "\n";
+  return 0;
+}
+
+// // https://prnt.sc/PKeU8hKI3Wuh

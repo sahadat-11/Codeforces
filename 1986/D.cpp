@@ -4,22 +4,13 @@ using namespace std;
 const int mod = 1e9 + 7;
 #define int long long
 void solve() {
-   int n; cin >> n;
-   vector<int> a(n);
-   for(int i = 0; i < n; i++) {
-     cin >> a[i];
-   }
-   int sum = abs(a[0]);
-   for(int i = 1; i < n; i++) {
-     sum += abs(a[i] - a[i - 1]);
-   }
-   cout << sum << "\n";
+   
 }
 int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   int t = 1; 
-  //cin >> t;
+  cin >> t;
   while(t--) {
     solve();
   }
