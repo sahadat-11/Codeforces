@@ -5,24 +5,20 @@ const int N = 1e5 + 7, mod = 1e9 + 7;
 #define int long long
 void solve() {
    int n; cin >> n;
-   vector<int> a(n);
+   vector<int> a(n), b(n);
    for(int i = 0; i < n; i++) {
      cin >> a[i];
    }
-   int x = 0, ind = -1;
+   int o = 0, z = 0;
    for(int i = 0; i < n; i++) {
-    if(a[i] != x) {
-      ind = i;
-      break;
-    } 
-    x++;
+     cin >> b[i];
+     if(b[i] == 0) z++;
+     else o++;
    }
-   int y = 0;
-   for(int i = ind; i < n; i++) {
-    if(a[i] != y) break;
-    y++;
-   }
-   cout << x << " " << y << "\n";
+   if(o and z) cout << "YES\n";
+   else if(is_sorted(a.begin(), a.end())) cout << "YES\n";
+   else cout << "NO\n";
+
 }
 int32_t main() {
   ios_base::sync_with_stdio(0);

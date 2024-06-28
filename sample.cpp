@@ -1,29 +1,34 @@
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-const int N = 1e7 + 7;
-bitset<N>f; // initially false;
-int main() {
-   ios_base::sync_with_stdio(0);
-   cin.tie(0);
-   f[0] = f[1] = true; 
-   for(int i = 4; i <= N; i += 2) f[i] = true;
-   for(int i = 3; i * i <= N; i += 2) {
-      if(!f[i]) {
-      for(int j = i * i; j <= N; j += 2 * i) f[j] = true;
-     } // i*i because (i+i) always a even number large from 2, which is already cut in 2 er condition
-   }
-   int t, cs = 0; cin >> t;
-   while(t--) {
-      cout << "Case " << ++cs << ": ";
-      int n; cin >> n;
-      int ways = 0;
-      if(n == 4) ways = 1;
-      for(int i = 3; i <= n / 2; i += 2) {
-         if(!f[i] and !f[n - i]) ways++;
-      }
-      cout << ways << "\n";
-   }
-   return 0;
+const int mod = 1e9 + 7;
+#define int long long
+int dx[] = {0, 0, -1, +1, -1, +1, -1, +1};
+int dy[] = {+1, -1, 0, 0, +1, +1, -1, -1};
+int n, m;
+bool isValid(int x, int y) {
+  return x >= 0 and x < n and y >= 0 and y < m;
+}
+
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n >> m;
+  string s[n];
+  for(int i = 0; i < n; i++) cin >> s[i];
+  int x, y; cin >> x >> y;
+  x--; y--;
+  bool flag = true;
+  for(int k = 0; k < 8; k++) {
+    int nxt_x = x + dx[k];
+    int nxt_y = y + dy[k];
+    //cout << nxt_x << " " << nxt_y << endl;
+    if(isValid(nxt_x, nxt_y)) {
+      if(s[nxt_x][nxt_y] != 'x') flag = false;
+    }
+  }
+  //cout << cnt << "\n";
+  if(flag) cout << "yes\n";
+  else cout << "no\n";
+  return 0;
 }

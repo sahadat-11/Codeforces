@@ -8,14 +8,21 @@ int32_t main() {
   cin.tie(0);
   int n; cin >> n;
   vector<int> a(n);
-  int ans = 0, neg = 0, zero = 0;
+  int mn = INT_MAX, mnid = 0;
   for(int i = 0; i < n; i++) {
     cin >> a[i];
-    ans += abs(abs(a[i]) - 1);
-    if(a[i] < 0) neg++;
-    if(a[i] == 0) zero++;
+    if(a[i] < mn) {
+      mn = a[i];
+      mnid = i + 1;
+    }
   }
-  if(neg % 2 and !zero) ans += 2;// if zero contain 0 k one operation a negative kora jave; then neg even hobe;
-  cout << ans << "\n";
+  sort(a.begin(), a.end());
+  bool flag = false;
+  if(n == 1 or (n == 2 and a[0] == a[n - 1])) {
+  	cout << "-1\n";
+  }
+  else {
+  	cout << 1 << "\n" << mnid << "\n";
+  }
   return 0;
 }

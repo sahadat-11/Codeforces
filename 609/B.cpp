@@ -5,13 +5,13 @@ const int mod = 1e9 + 7;
 #define ll long long
 void solve() {
    int n, k; cin >> n >> k;
-   vector<int> v(n);
-   for(int i = 0; i < n; i++) cin >> v[i];
+   vector<int> a(n);
+   for(int i = 0; i < n; i++) cin >> a[i];
    ll ans = 0;
    map<int, int> mp;
    for(int i = 0; i < n; i++) {
-     ans += (i - mp[v[i]]);
-     mp[v[i]]++;
+     ans += (i - mp[a[i]]);
+     mp[a[i]]++;
      //cout << ans << "\n";
    }
    cout << ans << "\n";
@@ -31,17 +31,21 @@ int main() {
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-const int mod = 1e9 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
 #define int long long
 void solve() {
-   int n, k; cin >> n >> k;
-   vector<int> v(n);
-   for(int i = 0; i < n; i++) cin >> v[i];
-   map<int, int> mp;
-   for(int i = 0; i < n; i++) mp[v[i]]++;
-   int ans = 0;
+   int n, m; cin >> n >> m;
+   vector<int> a(n);
    for(int i = 0; i < n; i++) {
-    ans += (n - mp[v[i]]);
+     cin >> a[i];
+   }
+   map<int, int> mp;
+   for(int i = 0; i < n; i++) {
+     mp[a[i]]++;
+   }
+   int ans = 0;
+   for(auto [val, fre] : mp) {
+    ans += (fre * (n - fre));
    }
    cout << ans / 2 << "\n";
 }

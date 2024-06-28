@@ -9,20 +9,32 @@ void solve() {
    for(int i = 0; i < n; i++) {
      cin >> a[i];
    }
-   int x = 0, ind = -1;
+   int x = 0, ind = n;
    for(int i = 0; i < n; i++) {
     if(a[i] != x) {
       ind = i;
       break;
-    } 
+    }
     x++;
    }
-   int y = 0;
+   vector<bool> used(n + 1, false);
    for(int i = ind; i < n; i++) {
-    if(a[i] != y) break;
-    y++;
+    used[a[i]] = true;
    }
-   cout << x << " " << y << "\n";
+   int y = 0;
+   for(int i = 0; i <= n; i++) {
+    if(!used[i]) {
+      y = i; break;
+    }
+   }
+   //cout << x << " " << y << "\n";
+   if(x != y) cout << "-1\n";
+   else {
+    cout << 2 << "\n";
+    ind = max(ind, 1ll);
+    cout << 1 << " " << ind << "\n";
+    cout << ind + 1 << " " << n << "\n";
+   }
 }
 int32_t main() {
   ios_base::sync_with_stdio(0);
